@@ -1,0 +1,21 @@
+<%= form_for(@flower) do |f| %>
+  <% if @flower.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@flower.errors.count, "error") %> prohibited this flower from being saved:</h2>
+
+      <ul>
+      <% @flower.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.label :name      %>
+    <%= f.text_field :name %>
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+    <%= f.submit %>
+  </div>
+<% end %>

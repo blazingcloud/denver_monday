@@ -1,0 +1,25 @@
+<h1>Listing flowers</h1>
+
+<table>
+  <tr>
+    <th>name</th>
+    <th>price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @flowers.each do |flower| %>
+  <tr>
+    <td><%= flower.name %></td>
+    <td><%= flower.price %></td>
+
+    <td><%= link_to 'Edit', edit_flower_path(flower) %></td>
+    <td><%= link_to 'Destroy', flower, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Flower', new_flower_path %>
